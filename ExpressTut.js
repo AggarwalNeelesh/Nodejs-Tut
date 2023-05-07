@@ -1,8 +1,9 @@
 const express = require('express')
+const reqFilter = require('./middleware').reqFilter
 // Making express executable
 const app = express()
 
-app.get('', (req, res)=>{
+app.get('',reqFilter, (req, res)=>{
     res.send("This is Home Page");
 })
 
